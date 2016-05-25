@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.letsgetstartup" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>בית ספר יחדיו</name>
+    <description>
+       Application for teching children.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+	<plugin name="org.apache.cordova.geolocation" />
+	<plugin name="org.apache.cordova.inappbrowser" />
+    <content src="index.html" />
+	<icon src="icon.png"/>
+    <splash src="splash.png" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />	
+	<access origin="*" />
+</widget>
