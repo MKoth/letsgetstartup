@@ -125,6 +125,7 @@
         $scope.drawMyLocation( position.coords.latitude, position.coords.longitude );
         $scope.userLat = position.coords.latitude;
         $scope.userLng = position.coords.longitude;
+        alert(position.coords.latitude+" "+position.coords.longitude);
       }, function(error){
         console.log("Couldn't get the location of the user.");
         console.log(error);
