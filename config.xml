@@ -9,6 +9,8 @@
     </author>
 	<plugin name="org.apache.cordova.geolocation" />
 	<plugin name="org.apache.cordova.inappbrowser" />
+	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	<plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <content src="index.html" />
 	<icon src="icon.png"/>
     <splash src="splash.png" />
