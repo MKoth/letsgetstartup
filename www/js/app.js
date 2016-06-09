@@ -264,7 +264,7 @@
           
       // Google Maps (Android)
       //var ref = window.open('http://maps.google.com/maps?q='+marker.location[0]+','+marker.location[1], '_system', 'location=yes');
-
+      var ref = window.open('http://maps.google.com/maps?saddr='+$scope.userLat+','+$scope.userLng+'&daddr='+marker.location[0]+','+marker.location[1], '_system', 'location=yes');
     });
           
       // Call
