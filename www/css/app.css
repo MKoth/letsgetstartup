@@ -6,3 +6,11 @@
 */
 
 /* Insert here your custom CSS */
+ons-toolbar.navigation-bar.navigation-bar--android {
+    position: absolute;
+    z-index: 10000;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background: linear-gradient(135deg, #1caeda 0%,#25a8d5 60%,#d38bc2 100%);
+}

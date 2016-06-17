@@ -8,6 +8,20 @@
       <ons-toolbar-button><ons-icon icon="ion-loading-c" fixed-width="false" ></ons-icon></ons-toolbar-button>
     </div>
   </ons-toolbar>
+  <style>
+		ons-toolbar.navigation-bar{
+			background: linear-gradient(135deg, #1caeda 0%,#25a8d5 60%,#d38bc2 100%)!important;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+60,d38bc2+100 */
+			background: #6db3f2; /* Old browsers */
+			background: -moz-linear-gradient(-45deg, #6db3f2 0%, #54a3ee 60%, #d38bc2 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(-45deg, #6db3f2 0%,#54a3ee 60%,#d38bc2 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(135deg, #6db3f2 0%,#54a3ee 60%,#d38bc2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#d38bc2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		.center {
+			color: #fff!important;
+		}
+  </style>
   <div  class="map-fullscreen-container" >
     <map zoom="8" center="{{ centerMap }}" class="fullscreen" zoom-control-options="{position:'RIGHT_TOP'}">
       

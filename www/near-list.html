@@ -9,6 +9,60 @@
     </div>
   </ons-toolbar>
   <div class="app-page">
+	<style>
+		ons-list[modifier=locations]{
+			background-color: rgba(0,0,0,0);
+			margin: 0 20px;
+		}
+		.location {
+			color: #fff;
+			opacity: 1!important;
+			font-size: 15px!important;
+		}
+		.name{
+			color: #fff;
+			font-size: 17px!important;
+			font-weight: bold!important;
+		}
+		.desc{
+			color: #fff;
+			font-size: 15px!important;
+		}
+		.km{
+			color: #fff;
+			opacity: 1!important;
+			font-size: 13px!important;
+		}
+		ons-toolbar.navigation-bar {
+			background: linear-gradient(135deg, #1caeda 0%,#25a8d5 60%,#d38bc2 100%)!important;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+60,d38bc2+100 */
+			background: #6db3f2; /* Old browsers */
+			background: -moz-linear-gradient(-45deg, #6db3f2 0%, #54a3ee 60%, #d38bc2 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(-45deg, #6db3f2 0%,#54a3ee 60%,#d38bc2 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(135deg, #6db3f2 0%,#54a3ee 60%,#d38bc2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#d38bc2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		.center{
+			color:#fff;
+		}
+		ons-icon.ng-scope.ons-icon.ons-icon--ion.ion-navicon-round.fa-lg {
+			color: #fff;
+		}
+		.tab-bar.ons-tab-bar__footer.ons-tabbar-inner{
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7370ae+0,bf4196+60,bf4196+100 */
+			background: #7370ae; /* Old browsers */
+			background: -moz-linear-gradient(-45deg,  #7370ae 0%, #bf4196 60%, #bf4196 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(-45deg,  #7370ae 0%,#bf4196 60%,#bf4196 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(135deg,  #7370ae 0%,#bf4196 60%,#bf4196 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7370ae', endColorstr='#bf4196',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		ons-icon.tab-icon.ng-scope.ons-icon.ons-icon--ion.ion-map.fa-lg {
+			color: #fff;
+		}
+		span.tab-label.ng-scope {
+			color: #fff;
+		}
+	</style>
     <ons-list modifier="locations">
 
       <ons-list-item class="list-location-container" ng-repeat="(id, marker) in markers | orderBy:'distance'" id="{{ id }}" >
@@ -42,5 +96,8 @@
       </ons-list-item>
 
     </ons-list>
+	<div>
+      <img src="images/bg.png" class="bg">
+    </div>
   </div>
 </ons-page>

@@ -1053,10 +1053,10 @@ h6 {
     <button class="button button--large">Button</button>
 */
 .button--large {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 36px;
-  padding: 4px 12px;
+  line-height: 30px;
+  padding: 14px 12px;
   display: block;
   width: 100%;
   text-align: center;
