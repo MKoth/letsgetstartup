@@ -85,8 +85,8 @@
     $scope.getAll = true;
     $scope.locationsType = 'map';
     $scope.centerMap = [40.7112, -74.213]; // Start Position
-    $scope.API = 'http://www.letsgetstartup.com/app-cloud/api/get_posts/?post_type=banks&cat=[SET_POST_ID_HERE]&posts_per_page=-1';
-    //$scope.API = 'http://www.letsgetstartup.com/app-cloud/api/get_posts/?post_type=banks&posts_per_page=-1';
+    //$scope.API = 'http://www.letsgetstartup.com/app-cloud/api/get_posts/?post_type=banks&cat=[SET_POST_ID_HERE]&posts_per_page=-1';
+    $scope.API = 'http://www.letsgetstartup.com/app-cloud/api/get_posts/?post_type=banks&posts_per_page=-1';
     //$scope.API = 'http://dev.studio31.co/api/get_posts/?post_type=banks&posts_per_page=-1';
     $scope.isFetching = true;
     $scope.locations = [];
