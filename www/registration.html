@@ -1,0 +1,13 @@
+<ons-page ng-controller="branchesController">
+	<div style="position:relative;margin-top: 15%;">
+		<i class="fa fa-user username-icon" style="top:8%;"></i>
+		<input type="text" class="text-input sign-input" ng-model="registration.name" placeholder="User Name">
+		<i class="fa fa-envelope-o email-icon"></i>
+		<input type="text" class="text-input sign-input" ng-model="registration.email" placeholder="User Email">
+		<i class="fa fa-lock password-icon" style="top: 83%;"></i>
+		<input type="password" class="text-input sign-input" ng-model="registration.password" placeholder="Password">
+	</div>
+	<button class="sign-button" ng-click="userRegister()" style="margin-top: 10%;">Sign In</button>
+	<p class="dont_have_message">Already have an account? <a href="#" ng-click="menu.setMainPage('login.html', {closeMenu: true})">Sign In</a></p>
+	<p style="color:red;margin:0;text-align:center;">{{registration_error}}</p>
+</ons-page>

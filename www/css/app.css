@@ -14,3 +14,103 @@ ons-toolbar.navigation-bar.navigation-bar--android {
     top: 0px;
     background: linear-gradient(135deg, #1caeda 0%,#25a8d5 60%,#d38bc2 100%);
 }
+.editFieldsListHolder {
+    padding-top: 25px;
+}
+.editFieldsListHolder input {
+    margin: 0 auto;
+    height: 45px;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border: 1px solid #5f5f5f;
+}
+.editFieldsListHolder textarea {
+    margin: 0 auto;
+    height: 150px;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border: 1px solid #5f5f5f;
+}
+.editFieldsListHolder button {
+    margin: 0 auto;
+    height: 45px;
+    border-radius: 10px;
+    background: #1a7a9c;
+    width: 75%;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 5%;
+}
+.username-icon {
+    position: absolute;
+    top: 16%;
+    left: 17%;
+    font-size: 24px;
+    color: #c7c7c7;
+}
+.email-icon {
+    position: absolute;
+    top: 45%;
+    left: 17%;
+    font-size: 24px;
+    color: #c7c7c7;
+}
+input.sign-input {
+    width: 74%;
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    padding-left: 12%;
+    font-size: 19px;
+}
+.password-icon {
+    position: absolute;
+    top: 71%;
+    left: 17%;
+    font-size: 24px;
+    color: #c7c7c7;
+}
+input.sign-input {
+    width: 74%;
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    padding-left: 12%;
+    font-size: 19px;
+}
+button.sign-button {
+    width: 74%;
+    display: block;
+    height: 10%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    background: #2399c3;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15%;
+    min-height: 70px;
+    margin-bottom: 18%;
+}
+p.dont_have_message {
+    margin: 0;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+p.dont_have_message a {
+    text-decoration: none;
+    color: #2399c3;
+}

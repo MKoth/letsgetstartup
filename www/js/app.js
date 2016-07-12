@@ -12,7 +12,7 @@
  
   var app = angular.module('app', ['onsen', 'angular-images-loaded', 'ngMap']);
 
-  // Filter to convert HTML content to string by removing all HTML tags
+// Filter to convert HTML content to string by removing all HTML tags
   app.filter('htmlToPlaintext', function() {
       return function(text) {
         return String(text).replace(/<[^>]+>/gm, '');
@@ -79,9 +79,125 @@
 
   // Map Markers Controller
   var map;
-
+	
   app.controller('branchesController', function($http, $scope, $compile, $sce){
-    
+	  
+	$scope.project_id = 1282;
+	$scope.newPostFields = function(){
+		$http({
+			url: "http://www.letsgetstartup.com/app-cloud/wp-admin/admin-ajax.php", 
+			method: "get",
+			params: {
+				action: "add_mobile_items_post",
+				//callback:'JSON_CALLBACK'
+			},
+		}).then(function(response) {
+			//alert(response);
+			//alert(response.data);
+			$scope.addNewItemName='';
+			$scope.addNewItemFields=response.data;
+		});
+	}
+	$scope.checkFieldType = function(field, type){
+		if(field==type)
+			return true;
+		else
+			return false;
+	}
+	
+	//registration or login error holding variable
+	$scope.registration_error = "";
+	
+	$scope.userLogin = function(){
+		$http({
+			url: "http://www.letsgetstartup.com/app-cloud/wp-admin/admin-ajax.php", 
+			method: "POST",
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			data: {
+				registration_data: $scope.registration,
+			},
+			params: {
+				'action': "login_api",
+				callback:'JSON_CALLBACK'
+			}
+		}).then(function(response) {
+			if(!response.data['error'])
+			{
+				localStorage.setItem("login",response.data['user_login']);
+				localStorage.setItem("id",response.data['user_id']);
+				menu.setMainPage('add-post.html', {closeMenu: true});
+			}
+			$scope.registration_error = response.data['error'];
+		});
+	}
+	//registering the new student user attaching it to the existing project
+	$scope.registration = {name:"",login:"",email:"",password:""};
+	$scope.userRegister = function(){
+		$http({
+			url: "http://www.letsgetstartup.com/app-cloud/wp-admin/admin-ajax.php", 
+			method: "POST",
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			data: {
+				registration_data: $scope.registration,
+				project_id: 0
+			},
+			params: {
+				'action': "app_registration_api",
+				callback:'JSON_CALLBACK'
+			}
+		}).then(function(response) {
+			if(!response.data['error'])
+			{
+				localStorage.setItem("login",response.data['user_login']);
+				localStorage.setItem("id",response.data['user_id']);
+				$scope.user_login = response.data['user_login'];
+				menu.setMainPage('add-post.html', {closeMenu: true});
+			}
+			$scope.registration_error = response.data['error'];
+		});
+	}
+	$scope.logoutFunc = function(){
+		localStorage.removeItem("login");
+		localStorage.removeItem("id");
+		localStorage.removeItem("project_id");
+		menu.setMainPage('login.html', {closeMenu: true});
+	}
+	$scope.addPostMenuItem = function(){
+		if(localStorage.getItem("login"))
+		{
+			menu.setMainPage('add-post.html', {closeMenu: true});
+		}
+		else
+		{
+			menu.setMainPage('login.html', {closeMenu: true});
+		}
+	}
+	//function adds posts to server database through api and renewing the list of posts
+	$scope.addItemFunc = function(name){
+		$http({
+			url: "http://www.letsgetstartup.com/app-cloud/wp-admin/admin-ajax.php", 
+			method: "POST",
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			data: {
+				add_data: $scope.addNewItemFields,
+				add_name: name,
+				proj_id: $scope.project_id
+			},
+			params: {
+				action: "add_mobile_items_data",
+			}
+		}).then(function(response){
+			alert("Post added!");
+			menu.setMainPage('branches.html', {closeMenu: true});
+		});
+	}
+	
+	$scope.getCurrentPositionFunc = function(){
+		if(navigator.geolocation)
+			navigator.geolocation.getCurrentPosition($scope.geolocationSuccess,$scope.geolocationError);
+	}
+	
+	
     $scope.getAll = true;
     $scope.locationsType = 'map';
     $scope.centerMap = [40.7112, -74.213]; // Start Position
@@ -118,7 +234,7 @@
     $scope.$on('mapInitialized', function(event, evtMap) {
       map = evtMap;
       $scope.init();
-      });
+    });
 
       $scope.init = function(){           
 
