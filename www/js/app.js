@@ -82,7 +82,7 @@
 	
   app.controller('branchesController', function($http, $scope, $compile, $sce){
 	  
-	$scope.project_id = 1282;
+	$scope.project_id = [PROJ_ID];
 	$scope.newPostFields = function(){
 		$http({
 			url: "http://www.letsgetstartup.com/app-cloud/wp-admin/admin-ajax.php", 
